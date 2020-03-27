@@ -1,6 +1,7 @@
 <?php
       require 'classes/Form.php';
       require 'classes/Html.php';
+      require 'classes/Validator.php';
 
 ?>
 <!DOCTYPE html>
