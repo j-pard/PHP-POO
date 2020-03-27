@@ -46,7 +46,7 @@
              * @return void Ecrit la balise input:text
              */
             public function text($name) {
-                  echo "<label for='" . $name . "'>" . ucfirst($name) . "<label>";
+                  echo "<label for='" . $name . "'>" . ucfirst($name) . "</label>";
                   echo "<input type='text' name='" . $name . "' value='" . $this->getValue($name) . "'>";
             }
 
@@ -86,7 +86,7 @@
              */
             public function checkbox($name) {
                   echo "<input type='checkbox' name='" . $name . "'>";
-                  echo "<label for='" . $name . "'>" . ucfirst($name) . "<label>";
+                  echo "<label for='" . $name . "'>" . ucfirst($name) . "</label>";
 
             }
 
@@ -116,7 +116,7 @@
              * @return void Ecrit la balise du bouton
              */
             public function submit($value) {
-                  echo "<input type='submit' value='" . $value . "'>";
+                  echo "<input type='submit' value='" . ucfirst($value) . "'>";
             }
       }
 ?>
