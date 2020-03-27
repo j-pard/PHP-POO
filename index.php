@@ -3,6 +3,7 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="assets/css/style.css">
       <title>Test POO</title>
 </head>
 <body>
@@ -12,13 +13,15 @@
             <?php 
                   require 'classes/Form.php';
 
-                  $form = new Form([$_POST]);
+                  $form = new Form([]);
 
-                  echo $form->create();
-                  echo $form->text("nom");
-                  echo $form->text("prenom");
-                  echo $form->submit("envoyer");
-                  echo $form->end();
+                  $form->create();
+                  $form->radio("genre", ["Mme", "Mr", "Autre"]);
+                  $form->text("nom");
+                  $form->text("prenom");
+                  $form->select("pays", ["Belgique", "France", "Pays-Bas", "Italie"]);
+                  $form->submit("envoyer");
+                  $form->end();
             ?>
       </div>
 </body>

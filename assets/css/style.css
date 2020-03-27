@@ -1,0 +1,12 @@
+form * {
+      display: block;
+      margin: 5px 0;
+}
+
+.inline-cont * {
+      display: inline-block;
+}
+
+.inline-cont label {
+      margin-left: 5px;
+}
