@@ -1,3 +1,62 @@
+body {
+      width: 100%;
+      overflow-x: hidden;
+}
+
+h1 {
+      text-align: center;
+      margin: 50px;
+}
+
+nav {
+      height: max-content;
+      width: 100%;
+      padding: 20px;
+      background-color: #ddd;
+}
+
+nav ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+
+      list-style: none;
+}
+
+nav ul li a {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      text-transform: uppercase;
+}
+
+nav ul li a:hover {
+      color: blue;
+}
+
+table {
+      width: 100%;
+}
+
+table tr {
+      width: 100%;
+}
+
+table tr td {
+      text-align: center;
+}
+table tr td img {
+      height: 100px;
+      width: auto;
+}
+
+/* ------------------------------------------- */
+
+.form-cont {
+      margin-left: 100px;
+}
+
 form * {
       display: block;
       margin: 5px 0;

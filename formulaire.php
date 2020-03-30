@@ -20,9 +20,19 @@
 
       <?php require 'views/nav.php'; ?>
       
-      <div>
-            <h1>Apprentissage de la POO en PHP</h1>
-            
+      <div class="form-cont">
+            <h1>Classe Formulaire</h1>
+            <?php 
+                  $form = new Form;
+
+                  $form->create();
+                  $form->radio("genre", ["Mme", "Mr", "Autre"]);
+                  $form->text("nom");
+                  $form->text("prenom");
+                  $form->select("pays", ["Belgique", "France", "Pays-Bas", "Italie"]);
+                  $form->submit("envoyer");
+                  $form->end();
+            ?>
       </div>
 </body>
 </html>
