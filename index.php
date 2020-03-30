@@ -1,9 +1,8 @@
 <?php
-      require 'classes/Form.php';
-      require 'classes/Html.php';
-      require 'classes/Validator.php';
-
+      require 'classes/Autoloader.php';
+      Autoloader::register();
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
