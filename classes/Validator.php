@@ -3,9 +3,7 @@
       class Validator {
 
             private function sanitize($input, $filter) {
-                  $input = filter_var($input, $filter);
-                  $input = trim($input);
-                  return $input;
+                  return trim(filter_var($input, $filter));
             }
 
             private function validate($input) {
@@ -17,6 +15,29 @@
                   }
             }
 
+            public static function check($entry, $type = "string") {
+                  switch ($type) {
+                        case "string" :
+                              $entry = sanitize($entry, FILTER_SANITIZE_STRING);
+                              break;
+                        case "int" :
+                              $entry = sanitize($entry, FILTER_SANITIZE_INT);
+                              break;
+                        case "float" :
+                              $entry = sanitize($entry, FILTER_SANITIZE_FLOAT);
+                              break;
+                        case "mail" :
+                              $entry = sanitize($entry, FILTER_SANITIZE_MAIL);
+                              break;
+                        case "url" :
+                              $entry = sanitize($entry, FILTER_SANITIZE_URL);
+                              break;
+                  }
+
+                  return validate($entry);
+            }
+
+            /* OTHER VERSION
             public function string($input) {
                   $input = sanitize($input, FILTER_SANITIZE_STRING);
                   $input = validate($input);
@@ -46,6 +67,7 @@
                   $input = validate($input);
                   return $input;
             }
+            */
       
       }
 
