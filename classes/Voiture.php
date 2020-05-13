@@ -23,29 +23,9 @@
                   $this->poids = $entries[6];
                   $this->photo = "<img src='" . $entries[7] . "'>";
 
-                  if($this->marque == 'Audi') {
-                        $this->reserved = "Oui";
-                  }
-                  else {
-                        $this->reserved = "Non";
-                  }
-                  
-                  if($this->poids >= 3.5) {
-                        $this->categorie = "Utilitaire";
-                  }
-                  else {
-                        $this->categorie = "Commerciale";
-                  }
-
-                  if($this->km < 100000) {
-                        $this->etat = "Neuf";
-                  }
-                  else if($this->km >= 100000 && $this->km < 200000) {
-                        $this->etat = "Moyen";
-                  }
-                  else if($this->km >= 200000) {
-                        $this->etat = "Usé";
-                  }
+                  $this->setReserved();
+                  $this->setEtat();
+                  $this->setCategory();
             }
 
 
@@ -55,7 +35,7 @@
             }
 
             private function setReserved() {
-                  if(getMarque() == 'Audi') {
+                  if($this->marque == 'Audi') {
                         $this->reserved = "Oui";
                   }
                   else {
@@ -87,7 +67,14 @@
                   }
             }
       
-            
+            public function setCategory() {
+                  if($this->poids >= 3.5) {
+                        $this->categorie = "Utilitaire";
+                  }
+                  else {
+                        $this->categorie = "Commerciale";
+                  }
+            }
 
             // METHODS --------------
             public function rouler() {
